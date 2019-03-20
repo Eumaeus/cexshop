@@ -45,32 +45,48 @@ def showMe(v:Any):Unit = {
 def morphServiceUrl(token:String, lang:String):String = s"http://services.perseids.org/bsp/morphologyservice/analysis/word?lang=${lang}&engine=morpheus${lang}&word=${token}"
 
 def getMorph(s:String, lang:String = "grc"):String = {
-	if ( (lang == "grc") | (lang == "lat")) {
+	if ( (lang == "grc") | (lang == "lat")) {	
 		val raw:String = scala.io.Source.fromURL(morphServiceUrl(s, lang)).mkString
 		raw
 	} else { "" }
 }
 
-def analyzeText(c:Corpus, lang:String = "grc"):Vector[(CtsUrn, String, String)] = {
-	val tups:Vector[(CtsUrn, String, String)] = {
+def analyzeText(c:Corpus, lang:String):Vector[(CtsUrn, String, String, String)] = {
+	val tups:Vector[(CtsUrn, String, String, String)] = {
 		c.nodes.filter(_.text.replaceAll(splitters,"").size > 0).map( n => {
 			val u:CtsUrn = n.urn
 			val s:String = n.text.replaceAll(splitters,"")
+			val str:String = {
+				if (lang == "grc") {
+					val gs:LiteraryGreekString = LiteraryGreekString(s)
+					gs.ascii.replaceAll("\\\\","/")
+				} else {
+					s
+				}
+			}
+			val url:String = morphServiceUrl(str,lang)
 			try {
-				val gs:LiteraryGreekString = LiteraryGreekString(s)
-				println(s""" … "${gs}" >> "${gs.ascii}" """)
-				val morph:String = getMorph(gs.ascii, lang)
-				if (morph.size < 300) { println(s""" No data for "${s}" (${u})")""") }
-				(u, s, morph)
+				println(s""" … (${lang}) "${s}" >> "${str}" """)
+				val morph:String = getMorph(str, lang)
+				(u, s, url, morph)
 			} catch {
 				case e:Exception => {
 					println(s"""ERROR on "${s}" (${u}) """)
-					(u, s, s"ERROR")
+					(u, s, url, s"ERROR")
 				}
 			}
 		})
 	}
+	println(s"Analyzed ${c.nodes.size} tokens into ${tups.size} analyses.")
 	tups
+}
+
+def saveTest(c:Corpus, lang:String) = {
+	val jString:String = analyzeText(c, lang).map( u => {
+		s"""urn: ${u._1}\nstring: "${u._2}\n${u._3}\n\n${u._4}"""
+	}).mkString("\n---------------\n")
+
+	saveString(jString, fileName = "testJson.txt")
 }
 
 /* Task-specific stuff below! */
@@ -101,5 +117,6 @@ lazy val libCex:String = CexWriter.writeCiteLibrary(
     )
 
 val h = CtsUrn("urn:cts:greekLit:tlg0016.tlg001.grc.token:1.8")
+//val h = CtsUrn("urn:cts:croala:kunicr.ilias.croala_ohco2:1.1-1.10")
 val c = corp ~~ h
 

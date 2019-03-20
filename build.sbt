@@ -12,7 +12,7 @@ resolvers += Resolver.jcenterRepo
 resolvers += Resolver.bintrayRepo("neelsmith","maven")
 resolvers += Resolver.bintrayRepo("eumaeus", "maven")
 
-val circeVersion = "0.11.1"
+val circeVersion = "0.10.0"
 
 libraryDependencies ++=   Seq(
   "edu.holycross.shot.cite" %% "xcite" % "4.0.2",
@@ -25,7 +25,8 @@ libraryDependencies ++=   Seq(
   "edu.furman.classics" %% "citealign" % "0.5.0",
   "org.homermultitext" %% "hmt-textmodel" % "4.0.0",
   "edu.furman.classics" %% "citewriter" % "1.0.1"
-),
+)
+
 libraryDependencies ++= Seq(
   "io.circe" %% "circe-core",
   "io.circe" %% "circe-generic",

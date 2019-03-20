@@ -198,7 +198,7 @@ var textsToInclude:ListBuffer[CtsUrn] = new ListBuffer[CtsUrn]
 def addText(t:String, p:String = "", tokenize:Boolean = true):Unit = {
 	t.toVector.head match {
 		case 'w' => {
-			val i:Int = t.toVector.tail.head.toString.toInt
+			val i:Int = t.toVector.tail.mkString("").toInt
 			val u:CtsUrn = works(i).urn
 			val urn:CtsUrn = CtsUrn(s"${u}${p}")
 			if (tokenize) {
@@ -212,7 +212,7 @@ def addText(t:String, p:String = "", tokenize:Boolean = true):Unit = {
 			showMe(textsToInclude)
 		}
 		case 'v' => {
-			val i:Int = t.toVector.tail.head.toString.toInt
+			val i:Int = t.toVector.tail.mkString("").toInt
 			val u:CtsUrn = versions(i).urn
 			val urn:CtsUrn = CtsUrn(s"${u}${p}")
 			if (tokenize) {
