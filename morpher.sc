@@ -42,7 +42,8 @@ def showMe(v:Any):Unit = {
 	}
 }
 
-def morphServiceUrl(token:String, lang:String):String = s"http://services.perseids.org/bsp/morphologyservice/analysis/word?lang=${lang}&engine=morpheus${lang}&word=${token}"
+def morphServiceUrl(token:String, lang:String):String = s"http://services.perseids.org/bsp/morphologyservice/analysis/word?lang=${lang}&engine=morpheus${lang}&mode=xml&word=${token}"
+
 
 def getMorph(s:String, lang:String = "grc"):String = {
 	if ( (lang == "grc") | (lang == "lat")) {	
