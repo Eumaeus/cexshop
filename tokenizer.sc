@@ -265,7 +265,7 @@ Clear the list of texts-to-be-written with:
 
 Write out CEX file with:
 
-	> writeCex
+	> writeCex()
 """
 
 def menu:Unit = {
