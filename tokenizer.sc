@@ -35,7 +35,10 @@ def tokenizeCtsNode(node:CitableNode, splitters:String = splitters, exemplarID:S
 		val tokenizedNodes:Vector[CitableNode] = {
 			tokens.zipWithIndex.map{ case (n, i) => {
 				val newUrn:CtsUrn = CtsUrn(s"${exemplarUrn}${editionCitation}.${i}")
-				val newNode:CitableNode = CitableNode(newUrn, n)
+				val lastCheckN:String = {
+					if (n.startsWith("!")) " !" else n
+				}
+				val newNode:CitableNode = CitableNode(newUrn, lastCheckN )
 				newNode
 			}}.filter(_.text != " ").filter(_.text.size > 0).toVector
 		}

@@ -37,8 +37,8 @@ def saveString(s:String, fileName:String = "cex/test.cex"):Unit = {
 
 def showMe(v:Any):Unit = {
 	v match {
-		case _:Iterable[Any] => println(s"""----\n${v.asInstanceOf[Iterable[Any]].mkString("\n")}\n----""")
 		case _:Vector[Any] => println(s"""----\n${v.asInstanceOf[Vector[Any]].mkString("\n")}\n----""")
+		case _:Iterable[Any] => println(s"""----\n${v.asInstanceOf[Iterable[Any]].mkString("\n")}\n----""")
 		case _ => println(s"-----\n${v}\n----")
 	}
 }

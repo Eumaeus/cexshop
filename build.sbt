@@ -23,7 +23,7 @@ libraryDependencies ++=   Seq(
   "edu.holycross.shot" %% "citeobj" % "7.3.2",
   "edu.holycross.shot" %% "gsphone" % "1.1.0",
   "edu.furman.classics" %% "citealign" % "0.5.0",
-  "edu.furman.classics" %% "fumorph" % "0.11.2",
+  "edu.furman.classics" %% "fumorph" % "0.12.0",
   "org.homermultitext" %% "hmt-textmodel" % "4.0.0",
   "edu.furman.classics" %% "citewriter" % "1.0.1"
 )
