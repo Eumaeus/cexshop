@@ -1,4 +1,4 @@
-# CEX Shop
+# TextCART
 
 A command-line environment for extracting textual data from a CITE library, based on the [CITE Architecture](http://cite-architecture.org).
 
