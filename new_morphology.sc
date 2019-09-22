@@ -28,10 +28,8 @@ def loadFile(fp:String):Vector[String] = {
 
 def saveString(s:String, fileName:String = "cex/test.cex"):Unit = {
 	val pw = new PrintWriter(new File(filePath + fileName))
-	for (line <- s.lines){
-		pw.append(line)
-		pw.append("\n")
-	}
+	pw.append(s)
+	pw.append("\n")
 	pw.close
 }
 

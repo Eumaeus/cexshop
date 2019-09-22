@@ -1,0 +1,343 @@
+
+/* General */
+
+span.cite_urn {
+	border-radius: 6px;
+	border: 1px solid black;
+	padding: 2px 6px 4px 0;
+}
+
+span.cite_urn:before {
+	padding: 3px 6px 4px 3px;
+	margin-right: 4px;
+	color: white;
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	content: "urn";
+}
+
+
+/* OHCO2 */
+
+span.ohco2_passageComponent {
+	margin-right: 1em;
+	font-size: 75%;
+	color: rgba(114, 38, 38,1);
+	display:inline-block;
+	min-width: 3em;
+}
+
+span.ohco2_citableNodeText {
+	margin-right: 1em;
+}
+
+span.ctsUrn {
+	margin: 0;
+	padding: 3px 6px 4px 0;
+	border: 1px solid rgba(114, 38, 38, 1);
+	border-radius: 6px;
+	background-color: rgba(114, 38, 38, 0.1);
+	color: rgba(114, 38, 38, 1);
+}
+
+span.ctsUrn:before {
+	background-color: rgba(114, 38, 38, 1);
+	color: white;
+}
+
+span.ohco2_catalogEntry_lang {
+	/*color: rgba(114, 38, 38, 1);*/
+}
+span.ohco2_catalogEntry_lang:before {
+	content: "[";
+}
+span.ohco2_catalogEntry_lang:after {
+	content: "]";
+}
+span.ohco2_catalogEntry_workTitle {
+/*	font-weight: bold;
+*/
+	font-style: italic;
+}
+span.ohco2_catalogEntry_versionLabel:before {
+	content: "(";
+}
+span.ohco2_catalogEntry_versionLabel:after {
+	content: ").";
+}
+span.ohco2_catalogEntry_citationScheme:before {
+	content: "Cited according to: ";
+}
+
+span.ohco2_catalogEntry_citationScheme {
+/*	color: rgba(114, 38, 38, 1);
+*/}
+
+span.ohco2_catalogEntry_online {
+/*	color: rgba(114, 38, 38, 1);
+*/}
+span.ohco2_catalogEntry_online:before {
+	content: "[";
+}
+span.ohco2_catalogEntry_online:after {
+	content: "]";
+}
+
+/* OHCO2 Corpora Display */
+
+div.ohco2_versionCorpus {
+	margin: 0 1em 0 2em;
+	font-family: "EB Garamond",  "LinuxLibertineORegular", "AseaRegular", "Times", serif; 
+	font-size: 14pt;
+	line-height: 1.1em;
+}
+
+div.ohco2_stanza {
+	margin-top: 2em;
+}
+
+div.ohco2_versionCorpus span.ohco2_citableNodeContainer {
+	display: block;
+}
+
+span.ohco2_citableNodeContainer {
+	display: block;
+}
+
+div.ohco2_passageGroup.ohco2_tokenized span.ohco2_citableNodeContainer {
+	display: inline-block;
+}
+
+div.ohco2_versionCorpus span.ctsUrn {
+	display: none;
+}
+
+div.ohco2_passageGroup.ohco2_tokenized span.ohco2_citableNodeContainer span.ohco2_passageComponent {
+	display: none;
+}
+
+div.ohco2_passageGroup.ohco2_tokenized span.ohco2_citableNodeText {
+	margin-right: 0.2em;
+}
+
+div.ohco2_versionCorpus span.ohco2_passageComponent {
+	margin-right: 2em;
+	font-size:75%;
+	color: maroon;
+	float: left;
+}
+
+div.ohco2_passageGroup {
+	margin-bottom: 0;
+}
+
+div.ohco2_versionCorpus span.ohco2_catalogEntry {
+	font-size: 75%;
+	display: block;
+	max-width: 25em;
+	line-height: 1.2em;
+	margin-left: 5em;
+	color: rgba(0,0,0,0.5);
+}
+
+div.ohco2_passageGroup.ohco2_tokenized {
+	margin-bottom: 0.3em;
+}
+
+span.ohco2_citableNodeText:hover {
+	background-color: lemonChiffon;
+}
+
+/* CiteObj */
+
+span.cite2Urn, span.citeobj_propertyDef span {
+	margin-right: 0.5em;
+	padding: 3px 6px 4px 0;
+	border: 1px solid rgba(38, 38, 114, 1);
+	border-radius: 6px;
+	background-color: rgba(38, 38, 114, 0.1);
+	color: rgba(38, 38, 114, 1);
+}
+
+span.citeobj_propertyDef {
+	margin: 0.5em 0 0.5em 0;
+}
+
+span.cite2Urn:before {
+	background-color: rgba(38, 38, 114, 1);
+	color: white;
+}
+
+span.citeobj_propertyDef span:before, span.citeobj_propertyValue span:before, span.citeobj_objLabel:before, span.citeobj_collectionLabel:before, span.citeobj_collLicense:before {
+	padding: 2px 6px 4px 3px;
+	margin-right: 4px;
+	color: white;
+	background-color: rgba(38, 38, 114, 1);
+	border: 1px solid rgba(38, 38, 114, 1);
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+
+span.citeobj_propertyDef {
+	display:block;
+}
+
+span.citeobj_propertyDef > span.cite2Urn, span.citeobj_propertyValue > span.cite2Urn {
+	padding: 2px 6px 4px 0;
+}
+
+span.citeobj_propertyDef span, span.citeobj_propertyValue span, span.citeobj_object span span, span.citeobj_object span.citeobj_objLabel, span.citeobj_collectionDef span span, span.citeobj_collectionDef span.citeobj_collectionLabel, span.citeobj_collectionDef span.citeobj_collLicense {
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	padding: 2px 6px 4px 0;
+	background-color: rgba(38, 38, 114, 0.1);
+	color: rgba(38, 38, 114, 1);
+	border: 1px solid rgba(38, 38, 114, 1);
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
+
+
+span.citeobj_propertyDef_label {
+
+}
+
+span.citeobj_propertyDef_label:before {
+	content: "label";
+}
+
+span.citeobj_propertyDef_type {
+
+}
+
+span.citeobj_propertyDef_type:before {
+	content: "type";
+}
+
+span.citeobj_propertyDef_vocab {
+
+}
+
+span.citeobj_propertyDef_vocab:before {
+	content: "controlled vocab";
+}
+
+span.citeobj_propertyValue_urn:before {
+	content: "urn";
+}
+
+span.citeobj_propertyValue_value:before {
+	content: "value";
+}
+
+span.citeobj_objLabel,  span.citeobj_collectionLabel{
+	font-weight: bold;
+}
+
+span.citeobj_objLabel:before {
+	content: "CITE Object";	
+}
+
+span.citeobj_collLicense:before {
+	content: "License";	
+}
+
+span.citeobj_collectionLabel:before {
+	content: "Collection";	
+}
+
+span.citeobj_propertyValue {
+	display: block;
+	margin: 0.5em 0 0.5em 0;
+}
+
+/* CITE Relations */
+
+span.citerelations_citeTriple {
+	border: 2px solid seagreen;
+	display: block;
+	padding: 0.5em;
+	border-radius: 10px;
+	line-height: 2em;
+	margin: 4px;
+}
+
+span.citerelations_citeTriple:before {
+	content: "CITE Relation";
+	background-color: seagreen;
+	color: white;
+	border: 1px solid darkgreen;
+	border-radius: 6px;
+	font-weight: bold;
+	padding: 5px;
+	position: relative;
+		padding: 2px 6px 4px 6px;
+
+}
+
+span.citerelations_citeTriple  span.cite_urn {
+	margin-right: 0;
+}
+
+span.citerelations_relation span.citerelations_relationUrn {
+	display: none;
+}
+
+span.citerelations_relation:hover span.citerelations_relationUrn {
+	display: inline;
+}
+
+span.citerelations_relation:hover span.citerelations_relationLabel {
+	background-color: palegreen;
+	color: black;
+}
+
+span.citerelations_relation span.citerelations_relationLabel {
+background-color: seagreen;
+	color: white;
+	border: 1px solid darkgreen;
+	border-radius: 6px;
+	font-weight: bold;
+	border-radius: 6px;
+	padding: 2px 6px 4px 6px;
+	margin-left: 4px;
+	margin-right:4px;
+}
+
+div.citerelations_relationSet {
+	padding: 5px;
+	border: 1px dashed darkgreen;
+	margin: 2em 0 1em 0;
+}
+
+div.citerelations_relationSet:before {
+	content: "CITE Relation Set";
+	background-color: seagreen;
+	color: white;
+	border: 1px solid darkgreen;
+	border-radius: 6px;
+	font-weight: bold;
+	padding: 5px;
+	position: relative;
+	top: -1em;
+	left: 0em;
+	padding: 2px 6px 4px 6px;
+
+}
+
+/* General */
+
+body {
+	font: 16px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	line-height: 1.4em;
+	color: #4d4d4d;
+	/* width: 550px; */
+	margin: 3em;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	-o-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}

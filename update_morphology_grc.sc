@@ -14,7 +14,7 @@ import edu.furman.classics.fumorph._
 :load morphConfig_grc.sc
 
 val filePath:String = "" 
-val splitters:String = """[\[\])(·⸁.,·;;   "?·!–—⸂⸃]"""
+val splitters:String = """[\[\])(·⸁.,·:…;;   "?·!–—⸂⸃]"""
 
 def loadLibrary(fp:String):CiteLibrary = {
 	val library = CiteLibrary(Source.fromFile(fp).getLines.mkString("\n"),"#",",")
@@ -28,10 +28,8 @@ def loadFile(fp:String):Vector[String] = {
 
 def saveString(s:String, fileName:String):Unit = {
 	val pw = new PrintWriter(new File(filePath + fileName))
-	for (line <- s.lines){
-		pw.append(line)
-		pw.append("\n")
-	}
+	pw.append(s)
+	pw.append("\n")
 	pw.close
 }
 

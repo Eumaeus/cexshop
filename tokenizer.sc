@@ -101,10 +101,8 @@ def loadFile(fp:String = "../iliad_alignment/iliad_pope.txt"):Vector[String] = {
 
 def saveString(s:String, filePath:String = filePath, fileName:String = "temp.txt"):Unit = {
 	val pw = new PrintWriter(new File(filePath + fileName))
-	for (line <- s.lines){
-		pw.append(line)
-		pw.append("\n")
-	}
+	pw.append(s)
+	pw.append("\n")
 	pw.close
 }
 
