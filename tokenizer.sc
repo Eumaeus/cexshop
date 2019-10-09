@@ -13,7 +13,7 @@ import scala.collection.mutable._
 
 
 val filePath:String = "cex/" 
-val splitters:String = """[\[\])(·⸁.,:·;;   "?·!–—⸂⸃]"""
+val splitters:String = """[“”()\[\]<>:·…⸁.,; "?·!–—⸂⸃-]"""
 
 def splitWithSplitter(text:String, splitters:String = """[\[\]··⸁.; "?!–—⸂⸃]"""):Vector[String] = {
 	val regexWithSplitter = s"(?<=${splitters})"
