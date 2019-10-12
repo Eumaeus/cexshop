@@ -12,6 +12,12 @@ resolvers += Resolver.jcenterRepo
 resolvers += Resolver.bintrayRepo("neelsmith","maven")
 resolvers += Resolver.bintrayRepo("eumaeus", "maven")
 
+javaOptions in run ++= Seq(
+    "-Xms256M",
+    "-Xmn16M",
+    "-Xmx4G"
+)
+
 val circeVersion = "0.10.0"
 
 libraryDependencies ++=   Seq(
