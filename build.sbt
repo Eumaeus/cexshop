@@ -18,6 +18,12 @@ javaOptions in run ++= Seq(
     "-Xmx4G"
 )
 
+javaOptions in console ++= Seq(
+    "-Xms256M",
+    "-Xmn16M",
+    "-Xmx4G"
+)
+
 val circeVersion = "0.10.0"
 
 libraryDependencies ++=   Seq(
