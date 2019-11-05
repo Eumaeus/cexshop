@@ -18,16 +18,10 @@ javaOptions in run ++= Seq(
     "-Xmx4G"
 )
 
-javaOptions in console ++= Seq(
-    "-Xms256M",
-    "-Xmn16M",
-    "-Xmx4G"
-)
-
 val circeVersion = "0.10.0"
 
 libraryDependencies ++=   Seq(
-  "edu.holycross.shot.cite" %% "xcite" % "4.0.2",
+  "edu.holycross.shot.cite" %% "xcite" % "4.1.1",
   "edu.holycross.shot" %% "ohco2" % "10.12.5",
   "edu.holycross.shot" %% "orca" % "4.2.0",
   "edu.holycross.shot" %% "scm" % "6.2.2",
