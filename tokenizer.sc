@@ -151,6 +151,7 @@ def tokenizedCatEntry(versionCat:CatalogEntry, exemplarId:String = "token"):Cata
 /* Task-specific stuff below! */
 
 val libraryFile:String = "cex/library.cex"
+//val libraryFile:String = "cex/ParaphraseTranslation.cex"
 
 // For CEX Generation
 val defaultExemplarId:String = "token"
@@ -174,9 +175,9 @@ lazy val libCex:String = CexWriter.writeCiteLibrary(
         ","
     )
 
-lazy val works:Vector[edu.holycross.shot.ohco2.LabelledCtsUrn] = tr.catalog.labelledWorks.toVector
+lazy val works:Vector[edu.holycross.shot.ohco2.LabelledCtsUrn] = tr.catalog.labelledWorks.toVector.sortBy(_.toString)
 
-lazy val versions:Vector[CatalogEntry] = tr.catalog.texts.toVector
+lazy val versions:Vector[CatalogEntry] = tr.catalog.texts.toVector.sortBy(_.toString)
 
 
 def listWorks:String = {
