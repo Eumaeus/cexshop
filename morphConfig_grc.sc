@@ -1,7 +1,7 @@
 
 // Path to a CEX file with texts you want to analyze morphologically
 //val textLibrary:String = "cex/latin_poetry_sampler.cex"
-val textLibrary:String = "cex/aristotle_poetics.cex"
+val textLibrary:String = "cex/iliad_23_part2.cex"
 
 // Language: Greek or Latin
 //val lang:MorphLanguage = Latin
